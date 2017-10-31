@@ -23,9 +23,13 @@ class ViewController: UIViewController {
     // MARK: - Button Action Method
     @IBAction func btnTopAction() {
         let objVC = self.storyboard?.instantiateViewController(withIdentifier: "TabController_Top") as! TabController_Top
+        objVC.tabBarPosition = "Top"
         self.navigationController?.pushViewController(objVC, animated: true)
     }
     
     @IBAction func btnBottonAction() {
+        let objVC = self.storyboard?.instantiateViewController(withIdentifier: "TabController_Top") as! TabController_Top
+        objVC.tabBarPosition = "Bottom"
+        self.navigationController?.pushViewController(objVC, animated: true)
     }
 }
