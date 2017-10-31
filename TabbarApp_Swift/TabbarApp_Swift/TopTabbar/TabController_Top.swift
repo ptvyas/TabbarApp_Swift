@@ -10,6 +10,8 @@ import UIKit
 
 class TabController_Top: UITabBarController, UITabBarControllerDelegate
 {
+    var tabBarPosition : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,21 +35,27 @@ class TabController_Top: UITabBarController, UITabBarControllerDelegate
         
         self.tabBar.invalidateIntrinsicContentSize()
         
-        var tabSize : CGFloat
-        tabSize = 44.0
-        
-        var orientation : UIInterfaceOrientation
-        orientation = UIApplication.shared.statusBarOrientation
-        
-        if UIInterfaceOrientationIsPortrait(orientation) {
-            tabSize = 32.0
+        if tabBarPosition.uppercased() == "Bottom".uppercased()
+        {
+            //---> Code
         }
+        else {
+            var tabSize : CGFloat
+            tabSize = 44.0
         
-        var frame : CGRect
-        frame = self.tabBar.frame
-        frame.origin.y = self.tabBar.frame.origin.x
-        frame.origin.y = 65
-        self.tabBar.frame = frame
+            var orientation : UIInterfaceOrientation
+            orientation = UIApplication.shared.statusBarOrientation
+        
+            if UIInterfaceOrientationIsPortrait(orientation) {
+                tabSize = 32.0
+            }
+        
+            var frame : CGRect
+            frame = self.tabBar.frame
+            frame.origin.y = self.tabBar.frame.origin.x
+            frame.origin.y = 65
+            self.tabBar.frame = frame
+        }
         
         self.tabBar.isTranslucent = false
         self.tabBar.isTranslucent = true
